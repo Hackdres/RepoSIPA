@@ -1,0 +1,3 @@
+juanessipa_homepage:
+    path:     /
+    defaults: { _controller: JuanessipaBundle:Default:index }
