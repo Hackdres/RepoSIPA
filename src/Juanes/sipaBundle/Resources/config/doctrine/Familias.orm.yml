@@ -1,0 +1,53 @@
+Juanes\sipaBundle\Entity\Familias:
+    type: entity
+    table: familias
+    indexes:
+        idMunicipio:
+            columns:
+                - idMunicipio
+    uniqueConstraints:
+        codFamilia:
+            columns:
+                - idFlia
+    id:
+        idFlia:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idFlia
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomFlia:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: nomFlia
+        vereda:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        finca:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+    manyToOne:
+        idMunicipio:
+            targetEntity: Municipios
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idMunicipio:
+                    referencedColumnName: idMunicipio
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

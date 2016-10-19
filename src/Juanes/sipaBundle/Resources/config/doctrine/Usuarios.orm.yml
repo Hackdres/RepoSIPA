@@ -1,0 +1,46 @@
+Juanes\sipaBundle\Entity\Usuarios:
+    type: entity
+    table: usuarios
+    uniqueConstraints:
+        Cedula:
+            columns:
+                - idUser
+    id:
+        idUser:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idUser
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomUser:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: nomUser
+        apeUser:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: apeUser
+        docUser:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: docUser
+        passUser:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: passUser
+    lifecycleCallbacks: {  }

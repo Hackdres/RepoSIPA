@@ -1,0 +1,54 @@
+Juanes\sipaBundle\Entity\Registrovisitas:
+    type: entity
+    table: registrovisitas
+    indexes:
+        idUser:
+            columns:
+                - idUser
+        idFamilia:
+            columns:
+                - idFlia
+    id:
+        idRegVis:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idRegVis
+            generator:
+                strategy: IDENTITY
+    fields:
+        fecha:
+            type: date
+            nullable: false
+            # options:
+            #     default: '2016-05-06'
+        archivo:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+    manyToOne:
+        idUser:
+            targetEntity: Usuarios
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idUser:
+                    referencedColumnName: idUser
+            orphanRemoval: false
+        idFlia:
+            targetEntity: Familias
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idFlia:
+                    referencedColumnName: idFlia
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

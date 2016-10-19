@@ -1,0 +1,74 @@
+Juanes\sipaBundle\Entity\Detallevisitas:
+    type: entity
+    table: detallevisitas
+    indexes:
+        idRegVis:
+            columns:
+                - idRegVis
+        idProducto:
+            columns:
+                - idProducto
+        idActividad:
+            columns:
+                - idActividad
+    id:
+        idRegActDet:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idRegActDet
+            generator:
+                strategy: IDENTITY
+    fields:
+        cantidad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: cantidad
+        estadoVis:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: estadoVis
+        idPadre:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idPadre
+    manyToOne:
+        idRegVis:
+            targetEntity: Registrovisitas
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idRegVis:
+                    referencedColumnName: idRegVis
+            orphanRemoval: false
+        idactividad:
+            targetEntity: Actividades
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idActividad:
+                    referencedColumnName: idActividad
+            orphanRemoval: false
+        idproducto:
+            targetEntity: Productos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idProducto:
+                    referencedColumnName: idProducto
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

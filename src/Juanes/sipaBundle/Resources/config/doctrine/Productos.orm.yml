@@ -1,0 +1,22 @@
+Juanes\sipaBundle\Entity\Productos:
+    type: entity
+    table: productos
+    id:
+        idProducto:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idProducto
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomProducto:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: nomProducto
+    lifecycleCallbacks: {  }

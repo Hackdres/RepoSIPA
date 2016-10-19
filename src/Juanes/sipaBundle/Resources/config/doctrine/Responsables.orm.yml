@@ -1,0 +1,53 @@
+Juanes\sipaBundle\Entity\Responsables:
+    type: entity
+    table: responsables
+    indexes:
+        idFamilia:
+            columns:
+                - idFamilia
+        idPersona:
+            columns:
+                - idPersona
+    id:
+        idRes:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idRes
+            generator:
+                strategy: IDENTITY
+    fields:
+        estadoRes:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: estadoRes
+        fechaRes:
+            type: date
+            nullable: false
+            column: fechaRes
+    manyToOne:
+        idFamilia:
+            targetEntity: Familias
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idFamilia:
+                    referencedColumnName: idFlia
+            orphanRemoval: false
+        idPersona:
+            targetEntity: Personas
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPersona:
+                    referencedColumnName: idPersona
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

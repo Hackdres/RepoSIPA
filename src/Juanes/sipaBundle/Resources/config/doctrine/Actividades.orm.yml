@@ -1,0 +1,22 @@
+Juanes\sipaBundle\Entity\Actividades:
+    type: entity
+    table: actividades
+    id:
+        idActividad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idActividad
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomActividad:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: nomActividad
+    lifecycleCallbacks: {  }

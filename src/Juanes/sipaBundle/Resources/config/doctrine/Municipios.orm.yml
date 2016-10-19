@@ -1,0 +1,22 @@
+Juanes\sipaBundle\Entity\Municipios:
+    type: entity
+    table: municipios
+    id:
+        idMunicipio:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idMunicipio
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomMunicipio:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: false
+            column: nomMunicipio
+    lifecycleCallbacks: {  }
