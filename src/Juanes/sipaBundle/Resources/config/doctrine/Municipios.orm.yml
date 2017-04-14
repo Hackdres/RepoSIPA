@@ -1,8 +1,12 @@
 Juanes\sipaBundle\Entity\Municipios:
     type: entity
     table: municipios
-    id:
+    indexes:
         idMunicipio:
+            columns:
+                - idMunicipio
+    id:
+        idmunicipio:
             type: integer
             nullable: false
             options:
@@ -12,11 +16,15 @@ Juanes\sipaBundle\Entity\Municipios:
             generator:
                 strategy: IDENTITY
     fields:
-        nomMunicipio:
+        nommunicipio:
             type: string
-            nullable: true
+            nullable: false
             length: 30
             options:
                 fixed: false
             column: nomMunicipio
+    oneToMany:
+        jummunfli:
+            targetEntity: Familias
+            mappedBy: jumflimun
     lifecycleCallbacks: {  }

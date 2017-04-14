@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Detallevisitas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idregactdet</th>
+                <th>Cantidad</th>
+                <th>Estadovis</th>
+                <th>Observa</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for detallevisita in detallevisitas %}
+            <tr>
+                <td><a href="{{ path('detallevisitas_show', { 'id': detallevisita.idregactdet }) }}">{{ detallevisita.idregactdet }}</a></td>
+                <td>{{ detallevisita.cantidad }}</td>
+                <td>{{ detallevisita.estadovis }}</td>
+                <td>{{ detallevisita.observa }}</td>
+                <td>{{ detallevisita.jumdetact.nomactividad }}</td>
+                <td>{{ detallevisita.jumdetreg.fecha|date("m/d/Y") }}</td>
+                <td>{{ detallevisita.jumdetpro.nomproducto }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('detallevisitas_show', { 'id': detallevisita.idregactdet }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('detallevisitas_edit', { 'id': detallevisita.idregactdet }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        {{ dump(detallevisitas)}}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('detallevisitas_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

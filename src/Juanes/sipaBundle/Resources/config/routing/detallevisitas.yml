@@ -1,0 +1,24 @@
+detallevisitas_index:
+    path:     /
+    defaults: { _controller: "JuanessipaBundle:Detallevisitas:index" }
+    methods:  GET
+
+detallevisitas_show:
+    path:     /{id}/show
+    defaults: { _controller: "JuanessipaBundle:Detallevisitas:show" }
+    methods:  GET
+
+detallevisitas_new:
+    path:     /new
+    defaults: { _controller: "JuanessipaBundle:Detallevisitas:new" }
+    methods:  [GET, POST]
+
+detallevisitas_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JuanessipaBundle:Detallevisitas:edit" }
+    methods:  [GET, POST]
+
+detallevisitas_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JuanessipaBundle:Detallevisitas:delete" }
+    methods:  DELETE

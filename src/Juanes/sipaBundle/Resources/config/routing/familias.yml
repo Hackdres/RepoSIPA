@@ -1,0 +1,24 @@
+admin_familias_index:
+    path:     /
+    defaults: { _controller: "JuanessipaBundle:Familias:index" }
+    methods:  GET
+
+admin_familias_show:
+    path:     /{id}/show
+    defaults: { _controller: "JuanessipaBundle:Familias:show" }
+    methods:  GET
+
+admin_familias_new:
+    path:     /new
+    defaults: { _controller: "JuanessipaBundle:Familias:new" }
+    methods:  [GET, POST]
+
+admin_familias_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JuanessipaBundle:Familias:edit" }
+    methods:  [GET, POST]
+
+admin_familias_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JuanessipaBundle:Familias:delete" }
+    methods:  DELETE

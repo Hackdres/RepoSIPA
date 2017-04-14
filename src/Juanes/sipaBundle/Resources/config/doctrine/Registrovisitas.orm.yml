@@ -2,14 +2,11 @@ Juanes\sipaBundle\Entity\Registrovisitas:
     type: entity
     table: registrovisitas
     indexes:
-        idUser:
-            columns:
-                - idUser
-        idFamilia:
-            columns:
-                - idFlia
-    id:
         idRegVis:
+            columns:
+                - idRegVis
+    id:
+        idregvis:
             type: integer
             nullable: false
             options:
@@ -22,8 +19,6 @@ Juanes\sipaBundle\Entity\Registrovisitas:
         fecha:
             type: date
             nullable: false
-            # options:
-            #     default: '2016-05-06'
         archivo:
             type: string
             nullable: false
@@ -31,24 +26,29 @@ Juanes\sipaBundle\Entity\Registrovisitas:
             options:
                 fixed: false
     manyToOne:
-        idUser:
-            targetEntity: Usuarios
+        jumreguse:
+            targetEntity: User
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idUser:
-                    referencedColumnName: idUser
+            inversedBy: jumuser
+            joinColumn:
+                name: idUser
+                referencedColumnName: idUser
             orphanRemoval: false
-        idFlia:
+        jumregfli:
             targetEntity: Familias
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idFlia:
-                    referencedColumnName: idFlia
+            inversedBy: jumflireg
+            joinColumn:
+                name: idFlia
+                referencedColumnName: idFlia
             orphanRemoval: false
+ 
+    oneToMany:
+        jumregvis:
+            targetEntity: Detallevisitas
+            mappedBy: jumdetreg
     lifecycleCallbacks: {  }

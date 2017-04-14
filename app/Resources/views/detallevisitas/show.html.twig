@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Detallevisitas</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idregactdet</th>
+                <td>{{ detallevisita.idregactdet }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <td>{{ detallevisita.cantidad }}</td>
+            </tr>
+            <tr>
+                <th>Estadovis</th>
+                <td>{{ detallevisita.estadovis }}</td>
+            </tr>
+            <tr>
+                <th>Observa</th>
+                <td>{{ detallevisita.observa }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('detallevisitas_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('detallevisitas_edit', { 'id': detallevisita.idregactdet }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

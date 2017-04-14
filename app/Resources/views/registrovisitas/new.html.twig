@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Registrovisitas creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form, { 'enctype':"multipart/form-data"} ) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_registrovisitas_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

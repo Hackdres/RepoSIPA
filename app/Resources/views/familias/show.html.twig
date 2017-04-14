@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Familias</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idflia</th>
+                <td>{{ familia.idflia }}</td>
+            </tr>
+            <tr>
+                <th>Nomflia</th>
+                <td>{{ familia.nomflia }}</td>
+            </tr>
+            <tr>
+                <th>Vereda</th>
+                <td>{{ familia.vereda }}</td>
+            </tr>
+            <tr>
+                <th>Finca</th>
+                <td>{{ familia.finca }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_familias_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_familias_edit', { 'id': familia.idflia }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+admin_registrovisitas_index:
+    path:     /
+    defaults: { _controller: "JuanessipaBundle:Registrovisitas:index" }
+    methods:  GET
+
+admin_registrovisitas_show:
+    path:     /{id}/show
+    defaults: { _controller: "JuanessipaBundle:Registrovisitas:show" }
+    methods:  GET
+
+admin_registrovisitas_new:
+    path:     /new
+    defaults: { _controller: "JuanessipaBundle:Registrovisitas:new" }
+    methods:  [GET, POST]
+
+admin_registrovisitas_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JuanessipaBundle:Registrovisitas:edit" }
+    methods:  [GET, POST]
+
+admin_registrovisitas_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JuanessipaBundle:Registrovisitas:delete" }
+    methods:  DELETE

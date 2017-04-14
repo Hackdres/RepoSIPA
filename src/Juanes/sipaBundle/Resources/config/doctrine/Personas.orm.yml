@@ -1,52 +1,56 @@
 Juanes\sipaBundle\Entity\Personas:
     type: entity
     table: personas
-    indexes:
-        codFamilia:
-            columns:
-                - idFamilia
     uniqueConstraints:
-        codPersona:
+        idPersona:
             columns:
                 - idPersona
     id:
-        idPersona:
+        idpersona:
             type: integer
             nullable: false
             options:
                 unsigned: false
             id: true
             column: idPersona
+            generator:
+                strategy: IDENTITY
     fields:
-        docPers:
+        docpers:
             type: integer
             nullable: false
             options:
                 unsigned: false
             column: docPers
-        nomPers:
+        nompers:
             type: string
             nullable: false
             length: 30
             options:
                 fixed: false
             column: nomPers
-        apePers:
+        apepers:
             type: string
             nullable: false
             length: 30
             options:
                 fixed: false
             column: apePers
-    oneToOne:
-        idFamilia:
+
+    manyToOne:
+        jumperfli:
             targetEntity: Familias
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idFamilia:
-                    referencedColumnName: idFlia
+            inversedBy: jumfliper
+            joinColumn:
+                name: idFlia
+                referencedColumnName: idFlia
             orphanRemoval: false
+    oneToMany:
+        jumperrep:
+            targetEntity: Responsables
+            mappedBy: jumresper
+            
     lifecycleCallbacks: {  }

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Familias list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idflia</th>
+                <th>Nomflia</th>
+                <th>Vereda</th>
+                <th>Finca</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for familia in familias %}
+            <tr>
+                <td><a href="{{ path('admin_familias_show', { 'id': familia.idflia }) }}">{{ familia.idflia }}</a></td>
+                <td>{{ familia.nomflia }}</td>
+                <td>{{ familia.vereda }}</td>
+                <td>{{ familia.finca }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_familias_show', { 'id': familia.idflia }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_familias_edit', { 'id': familia.idflia }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_familias_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

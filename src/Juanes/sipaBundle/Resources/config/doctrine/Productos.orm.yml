@@ -1,8 +1,12 @@
 Juanes\sipaBundle\Entity\Productos:
     type: entity
     table: productos
-    id:
+    indexes:
         idProducto:
+            columns:
+                - idProducto
+    id:
+        idproducto:
             type: integer
             nullable: false
             options:
@@ -12,11 +16,19 @@ Juanes\sipaBundle\Entity\Productos:
             generator:
                 strategy: IDENTITY
     fields:
-        nomProducto:
+        nomproducto:
             type: string
             nullable: false
             length: 30
             options:
                 fixed: false
             column: nomProducto
+    oneToMany:
+        jumpro:
+            targetEntity: Detallevisitas
+            mappedBy: jumdetpro
+            
+        jumpropf:
+            targetEntity: Prodflias
+            mappedBy: jumpfpro
     lifecycleCallbacks: {  }

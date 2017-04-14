@@ -1,0 +1,24 @@
+admin_prodflias_index:
+    path:     /
+    defaults: { _controller: "JuanessipaBundle:Prodflias:index" }
+    methods:  GET
+
+admin_prodflias_show:
+    path:     /{id}/show
+    defaults: { _controller: "JuanessipaBundle:Prodflias:show" }
+    methods:  GET
+
+admin_prodflias_new:
+    path:     /new
+    defaults: { _controller: "JuanessipaBundle:Prodflias:new" }
+    methods:  [GET, POST]
+
+admin_prodflias_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JuanessipaBundle:Prodflias:edit" }
+    methods:  [GET, POST]
+
+admin_prodflias_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JuanessipaBundle:Prodflias:delete" }
+    methods:  DELETE

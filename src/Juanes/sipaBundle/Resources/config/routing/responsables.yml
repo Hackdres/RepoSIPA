@@ -1,0 +1,24 @@
+admin_responsables_index:
+    path:     /
+    defaults: { _controller: "JuanessipaBundle:Responsables:index" }
+    methods:  GET
+
+admin_responsables_show:
+    path:     /{id}/show
+    defaults: { _controller: "JuanessipaBundle:Responsables:show" }
+    methods:  GET
+
+admin_responsables_new:
+    path:     /new
+    defaults: { _controller: "JuanessipaBundle:Responsables:new" }
+    methods:  [GET, POST]
+
+admin_responsables_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JuanessipaBundle:Responsables:edit" }
+    methods:  [GET, POST]
+
+admin_responsables_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JuanessipaBundle:Responsables:delete" }
+    methods:  DELETE

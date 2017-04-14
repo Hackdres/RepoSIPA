@@ -1,0 +1,24 @@
+admin_actividades_index:
+    path:     /
+    defaults: { _controller: "JuanessipaBundle:Actividades:index" }
+    methods:  GET
+
+admin_actividades_show:
+    path:     /{id}/show
+    defaults: { _controller: "JuanessipaBundle:Actividades:show" }
+    methods:  GET
+
+admin_actividades_new:
+    path:     /new
+    defaults: { _controller: "JuanessipaBundle:Actividades:new" }
+    methods:  [GET, POST]
+
+admin_actividades_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JuanessipaBundle:Actividades:edit" }
+    methods:  [GET, POST]
+
+admin_actividades_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JuanessipaBundle:Actividades:delete" }
+    methods:  DELETE

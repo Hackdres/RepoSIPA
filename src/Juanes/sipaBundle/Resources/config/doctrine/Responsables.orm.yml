@@ -1,15 +1,12 @@
 Juanes\sipaBundle\Entity\Responsables:
     type: entity
     table: responsables
-    indexes:
-        idFamilia:
-            columns:
-                - idFamilia
-        idPersona:
-            columns:
-                - idPersona
-    id:
+    uniqueConstraints:
         idRes:
+            columns:
+                - idRes
+    id:
+        idres:
             type: integer
             nullable: false
             options:
@@ -19,35 +16,35 @@ Juanes\sipaBundle\Entity\Responsables:
             generator:
                 strategy: IDENTITY
     fields:
-        estadoRes:
+        estadores:
             type: integer
             nullable: false
             options:
                 unsigned: false
             column: estadoRes
-        fechaRes:
+        fechares:
             type: date
             nullable: false
             column: fechaRes
     manyToOne:
-        idFamilia:
+        jumresfli:
             targetEntity: Familias
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idFamilia:
-                    referencedColumnName: idFlia
+            inversedBy: jumflirep
+            joinColumn:
+                name: idFlia
+                referencedColumnName: idFlia
             orphanRemoval: false
-        idPersona:
+        jumresper:
             targetEntity: Personas
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idPersona:
-                    referencedColumnName: idPersona
+            inversedBy: jumperrep
+            joinColumn:
+                name: idPersona
+                referencedColumnName: idPersona
             orphanRemoval: false
     lifecycleCallbacks: {  }

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Actividades</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idactividad</th>
+                <td>{{ actividade.idactividad }}</td>
+            </tr>
+            <tr>
+                <th>Nomactividad</th>
+                <td>{{ actividade.nomactividad }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_actividades_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_actividades_edit', { 'id': actividade.idactividad }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

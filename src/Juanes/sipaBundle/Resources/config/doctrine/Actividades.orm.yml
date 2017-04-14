@@ -1,8 +1,12 @@
 Juanes\sipaBundle\Entity\Actividades:
     type: entity
     table: actividades
-    id:
+    indexes:
         idActividad:
+            columns:
+                - idActividad
+    id:
+        idactividad:
             type: integer
             nullable: false
             options:
@@ -12,11 +16,16 @@ Juanes\sipaBundle\Entity\Actividades:
             generator:
                 strategy: IDENTITY
     fields:
-        nomActividad:
+        nomactividad:
             type: string
             nullable: false
             length: 30
             options:
                 fixed: false
             column: nomActividad
+
+    oneToMany:
+        jumacti:
+            targetEntity: Detallevisitas
+            mappedBy: jumdetact
     lifecycleCallbacks: {  }

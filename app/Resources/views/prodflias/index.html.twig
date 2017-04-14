@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Prodflias list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idprodflia</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prodflia in prodflias %}
+            <tr>
+                <td><a href="{{ path('admin_prodflias_show', { 'id': prodflia.idprodflia }) }}">{{ prodflia.idprodflia }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_prodflias_show', { 'id': prodflia.idprodflia }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_prodflias_edit', { 'id': prodflia.idprodflia }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_prodflias_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

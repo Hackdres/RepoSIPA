@@ -1,0 +1,24 @@
+admin_municipios_index:
+    path:     /
+    defaults: { _controller: "JuanessipaBundle:Municipios:index" }
+    methods:  GET
+
+admin_municipios_show:
+    path:     /{id}/show
+    defaults: { _controller: "JuanessipaBundle:Municipios:show" }
+    methods:  GET
+
+admin_municipios_new:
+    path:     /new
+    defaults: { _controller: "JuanessipaBundle:Municipios:new" }
+    methods:  [GET, POST]
+
+admin_municipios_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JuanessipaBundle:Municipios:edit" }
+    methods:  [GET, POST]
+
+admin_municipios_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JuanessipaBundle:Municipios:delete" }
+    methods:  DELETE

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Registrovisitas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idregvis</th>
+                <th>Fecha</th>
+                <th>Archivo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for registrovisita in registrovisitas %}
+            <tr>
+                <td><a href="{{ path('admin_registrovisitas_show', { 'id': registrovisita.idregvis }) }}">{{ registrovisita.idregvis }}</a></td>
+                <td>{% if registrovisita.fecha %}{{ registrovisita.fecha|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ registrovisita.archivo }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_registrovisitas_show', { 'id': registrovisita.idregvis }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_registrovisitas_edit', { 'id': registrovisita.idregvis }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_registrovisitas_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

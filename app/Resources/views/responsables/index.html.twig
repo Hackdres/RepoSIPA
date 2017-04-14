@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Responsables list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idres</th>
+                <th>Estadores</th>
+                <th>Fechares</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for responsable in responsables %}
+            <tr>
+                <td><a href="{{ path('admin_responsables_show', { 'id': responsable.idres }) }}">{{ responsable.idres }}</a></td>
+                <td>{{ responsable.estadores }}</td>
+                <td>{% if responsable.fechares %}{{ responsable.fechares|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_responsables_show', { 'id': responsable.idres }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_responsables_edit', { 'id': responsable.idres }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_responsables_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

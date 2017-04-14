@@ -1,18 +1,9 @@
 Juanes\sipaBundle\Entity\Detallevisitas:
     type: entity
     table: detallevisitas
-    indexes:
-        idRegVis:
-            columns:
-                - idRegVis
-        idProducto:
-            columns:
-                - idProducto
-        idActividad:
-            columns:
-                - idActividad
+    
     id:
-        idRegActDet:
+        idregactdet:
             type: integer
             nullable: false
             options:
@@ -27,48 +18,48 @@ Juanes\sipaBundle\Entity\Detallevisitas:
             nullable: false
             options:
                 unsigned: false
-            column: cantidad
-        estadoVis:
+        estadovis:
             type: integer
             nullable: false
             options:
                 unsigned: false
             column: estadoVis
-        idPadre:
-            type: integer
+        observa:
+            type: string
             nullable: false
+            length: 60
             options:
-                unsigned: false
-            column: idPadre
+                fixed: false
+            column: observa
     manyToOne:
-        idRegVis:
+        jumdetreg:
             targetEntity: Registrovisitas
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idRegVis:
-                    referencedColumnName: idRegVis
+            inversedBy: jumregvis
+            joinColumn:
+                name: detregvis_id
+                referencedColumnName: idRegVis
             orphanRemoval: false
-        idactividad:
+        jumdetact:
             targetEntity: Actividades
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idActividad:
-                    referencedColumnName: idActividad
+            inversedBy: jumacti
+            joinColumn:
+                name: detact_id
+                referencedColumnName: idActividad
             orphanRemoval: false
-        idproducto:
+        jumdetpro:
             targetEntity: Productos
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idProducto:
-                    referencedColumnName: idProducto
+            inversedBy: jumpro
+            joinColumn:
+                name: detpro_id
+                referencedColumnName: idProducto
             orphanRemoval: false
     lifecycleCallbacks: {  }

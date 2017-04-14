@@ -2,15 +2,11 @@ Juanes\sipaBundle\Entity\Familias:
     type: entity
     table: familias
     indexes:
-        idMunicipio:
-            columns:
-                - idMunicipio
-    uniqueConstraints:
-        codFamilia:
-            columns:
-                - idFlia
-    id:
         idFlia:
+            columns:
+                - idFlia    
+    id:
+        idflia:
             type: integer
             nullable: false
             options:
@@ -20,7 +16,7 @@ Juanes\sipaBundle\Entity\Familias:
             generator:
                 strategy: IDENTITY
     fields:
-        nomFlia:
+        nomflia:
             type: string
             nullable: false
             length: 30
@@ -33,21 +29,41 @@ Juanes\sipaBundle\Entity\Familias:
             length: 30
             options:
                 fixed: false
+            column: verda
         finca:
             type: string
             nullable: false
             length: 30
             options:
                 fixed: false
+            column: finca
     manyToOne:
-        idMunicipio:
+        jumflimun:
             targetEntity: Municipios
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idMunicipio:
-                    referencedColumnName: idMunicipio
+            inversedBy: jummunfli
+            joinColumn:
+                name: idMunicipio
+                referencedColumnName: idMunicipio
             orphanRemoval: false
+
+    oneToMany:
+        jumflirep:
+            targetEntity: Responsables
+            mappedBy: jumresfli
+
+        jumflireg:
+            targetEntity: Registrovisitas
+            mappedBy: jumregfli
+
+        jumflipf:
+            targetEntity: Prodflias
+            mappedBy: jumpffli
+
+        jumfliper:
+            targetEntity: Personas
+            mappedBy: jumperfli
+
     lifecycleCallbacks: {  }

@@ -1,12 +1,12 @@
-Juanes\sipaBundle\Entity\Usuarios:
+Juanes\sipaBundle\Entity\User:
     type: entity
-    table: usuarios
+    table: user
     uniqueConstraints:
-        Cedula:
+        idUser:
             columns:
                 - idUser
     id:
-        idUser:
+        iduser:
             type: integer
             nullable: false
             options:
@@ -16,31 +16,42 @@ Juanes\sipaBundle\Entity\Usuarios:
             generator:
                 strategy: IDENTITY
     fields:
-        nomUser:
+        username:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: username
+        nomuser:
             type: string
             nullable: false
             length: 30
             options:
                 fixed: false
             column: nomUser
-        apeUser:
+        apeuser:
             type: string
             nullable: false
             length: 30
             options:
                 fixed: false
             column: apeUser
-        docUser:
+        docuser:
             type: integer
             nullable: false
             options:
                 unsigned: false
             column: docUser
-        passUser:
+        password:
             type: string
             nullable: false
-            length: 30
+            length: 80
             options:
                 fixed: false
-            column: passUser
+            column: password
+    oneToMany:
+        jumuser:
+            targetEntity: Registrovisitas
+            mappedBy: jumreguse
     lifecycleCallbacks: {  }

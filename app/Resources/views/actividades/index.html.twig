@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Actividades list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idactividad</th>
+                <th>Nomactividad</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actividade in actividades %}
+            <tr>
+                <td><a href="{{ path('admin_actividades_show', { 'id': actividade.idactividad }) }}">{{ actividade.idactividad }}</a></td>
+                <td>{{ actividade.nomactividad }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_actividades_show', { 'id': actividade.idactividad }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_actividades_edit', { 'id': actividade.idactividad }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_actividades_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

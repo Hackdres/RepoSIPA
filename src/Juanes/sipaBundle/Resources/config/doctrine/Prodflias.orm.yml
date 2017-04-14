@@ -2,14 +2,11 @@ Juanes\sipaBundle\Entity\Prodflias:
     type: entity
     table: prodflias
     indexes:
-        idProducto:
-            columns:
-                - idProducto
-        idFamilia:
-            columns:
-                - idFlia
-    id:
         idProdFlia:
+            columns:
+                - idProdFlia
+    id:
+        idprodflia:
             type: integer
             nullable: false
             options:
@@ -19,24 +16,24 @@ Juanes\sipaBundle\Entity\Prodflias:
             generator:
                 strategy: IDENTITY
     manyToOne:
-        idProducto:
+        jumpfpro:
             targetEntity: Productos
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idProducto:
-                    referencedColumnName: idProducto
+            inversedBy: jumpropf
+            joinColumn:
+                name: idProducto
+                referencedColumnName: idProducto
             orphanRemoval: false
-        idFlia:
+        jumpffli:
             targetEntity: Familias
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idFlia:
-                    referencedColumnName: idFlia
+            inversedBy: jumflipf
+            joinColumn:
+                name: idFlia
+                referencedColumnName: idFlia
             orphanRemoval: false
     lifecycleCallbacks: {  }

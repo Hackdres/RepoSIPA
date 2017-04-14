@@ -1,3 +1,53 @@
+juanessipa_detallevisitas:
+    resource: "@JuanessipaBundle/Resources/config/routing/detallevisitas.yml"
+    prefix:   /detallevisitas
+
+juanessipa_admin_productos:
+    resource: "@JuanessipaBundle/Resources/config/routing/productos.yml"
+    prefix:   /admin/productos
+
+juanessipa_admin_prodflias:
+    resource: "@JuanessipaBundle/Resources/config/routing/prodflias.yml"
+    prefix:   /admin/prodflias
+
+juanessipa_admin_familias:
+    resource: "@JuanessipaBundle/Resources/config/routing/familias.yml"
+    prefix:   /admin/familias
+
+juanessipa_admin_municipios:
+    resource: "@JuanessipaBundle/Resources/config/routing/municipios.yml"
+    prefix:   /admin/municipios
+
+juanessipa_admin_responsables:
+    resource: "@JuanessipaBundle/Resources/config/routing/responsables.yml"
+    prefix:   /admin/responsables
+
+juanessipa_admin_personas:
+    resource: "@JuanessipaBundle/Resources/config/routing/personas.yml"
+    prefix:   /admin/personas
+
+juanessipa_admin_registrovisitas:
+    resource: "@JuanessipaBundle/Resources/config/routing/registrovisitas.yml"
+    prefix:   /admin/registrovisitas
+    
+juanessipa_admin_actividades:
+    resource: "@JuanessipaBundle/Resources/config/routing/actividades.yml"
+    prefix:   /admin/actividades
+    
+juanessipa_admin_user:
+    resource: "@JuanessipaBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user
+
 juanessipa_homepage:
     path:     /
     defaults: { _controller: JuanessipaBundle:Default:index }
+
+login:
+    path: /login
+    defaults: { _controller: JuanessipaBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
