@@ -2,6 +2,10 @@
 
 {% block body %}
     <h1>Detallevisitas list</h1>
+    {{ dump(detallevisitas)}}
+    
+    
+    {% include '@FullCalendar/Calendar/calendar.html.twig' %}
 
     <table>
         <thead>
@@ -35,7 +39,6 @@
                 </td>
             </tr>
         {% endfor %}
-        {{ dump(detallevisitas)}}
         </tbody>
     </table>
 

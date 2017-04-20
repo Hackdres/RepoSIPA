@@ -3,7 +3,12 @@
 namespace Juanes\sipaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection; // para crear arreglos de esta entidad, osea desplegables en el menu me imagino.
+use Doctrine\Common\Collections\ArrayCollection;
+use AncaRebeca\FullCalendarBundle\Model\FullCalendarEvent;
+
+// use AncaRebeca\FullCalendarBundle\Model\EventInterface;
+// use Symfony\Component\EventDispatcher\Event as EventDispatcher;
+// class Registrovisitas extends EventDispatcher
 
 /**
  * Registrovisitas
@@ -42,6 +47,11 @@ class Registrovisitas
 
     private $jumregfli;
 
+    protected $title;
+
+    protected $allDay = true;
+    
+    protected $startDate;
 
 
     public function __construct()

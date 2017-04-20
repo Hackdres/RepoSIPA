@@ -6,8 +6,10 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
             <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/fullcalendar/css/fullcalendar/fullcalendar.min.css') }}" />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block head %} {% endblock %}
     </head>
     <body>
         <div class="container"> <!-- Todo el Toolbar de Navegacion -->
@@ -46,13 +48,23 @@
         </header>
         </div>
 
-
         {% block body %}
         {% endblock %}
+        
 
         {% block javascripts %}
             <script src="{{ asset('js/bootstrap.js') }}"></script>
-            <script src="{{ asset('js/jquery-3.2.0.min.js') }}"></script> <!-- esperar a ver si luego nos dicen! -->
+            <script type="text/javascript" src="{{ asset('js/jquery-3.2.0.min.js') }}"></script> <!-- esperar a ver si luego nos dicen! -->
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/jquery.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/locale/es.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.default-settings.js') }}"></script>
+            
+            {# 
+            esta es la libreria del calendario traida desde el bundle
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.default-settings.js') }}"></script>
+ #}
         {% endblock %}
     </body>
 </html>

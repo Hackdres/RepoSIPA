@@ -1,3 +1,6 @@
+ancarebeca_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yml"
+
 juanessipa_detallevisitas:
     resource: "@JuanessipaBundle/Resources/config/routing/detallevisitas.yml"
     prefix:   /detallevisitas
